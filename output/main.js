@@ -15,3 +15,36 @@ username = 12345;
 
 console.log(typeof username)
 
+
+
+const students = [
+  { name: "A", marks: 85 },
+  { name: "B", marks: 42 },
+  { name: "C", marks: 76 },
+  { name: "D", marks: 59 },
+  { name: "E", marks: 91 }
+];
+
+
+
+
+const passedStudents = [];
+let totalMark = 0;
+let topStudent;
+
+for (let i = 0; i < students.length; i++){
+    if (students[i].marks >= 60){
+        passedStudents.push(students[i].name)
+    }
+    totalMark = students[i].marks + totalMark;
+    
+}
+
+
+
+const avgMark = totalMark / students.length;
+
+
+console.log("Passed Students:", passedStudents);
+console.log(avgMark);
+
