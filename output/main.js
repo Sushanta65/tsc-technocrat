@@ -8,18 +8,12 @@
 //     age: 34,
 //     isMarried: true,
 // }
-const student1 = {
-    name: "Rohim",
-    age: 34,
-    grade: 3.5,
-    subject: "Social Work",
-    isRegular: true,
+const getQuizSummary = (scores) => {
+    // write your code here
+    const total = scores.length ? scores.reduce((acc, curr) => acc + curr) : 0;
+    const average = scores.length ? total / scores.length : 0;
+    return {
+        total,
+        average
+    };
 };
-const arr = [{
-        name: "Rohim",
-        age: 23,
-        subject: "Bangla",
-        isRegular: false
-    }
-];
-console.log(arr);
