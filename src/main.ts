@@ -33,9 +33,7 @@
 //   isRegular: true,
 // };
 
-
-
-// const arr: Student[] = [{ 
+// const arr: Student[] = [{
 //     name: "Rohim",
 //      age: 23,
 //      subject: "Bangla",
@@ -45,88 +43,77 @@
 
 // console.log(arr);
 
-
 // Assignment 04 Problem solving Typescript
-
 
 // Problem 01
 
-// const getBatteryStatus = (percentage: number): string => {
-//     // write your code here
-//     if(percentage >= 0 && percentage <= 20){
-//         return "Low";
-//     }else if(percentage >= 21 && percentage <= 50){
-//         return "Medium";
-//     }else if(percentage >= 51 && percentage <= 90){
-//         return "High";
-//     }else if(percentage >= 91 && percentage <=100){
-//         return "Full";
-//     }
-//     else{
-//         return "Please provide valid number of percentage. (e.g 0-100)"
-//     }
-// };
-
+const getBatteryStatus = (percentage: number): string => {
+  // write your code here
+  if (percentage >= 0 && percentage <= 20) {
+    return "Low";
+  } else if (percentage >= 21 && percentage <= 50) {
+    return "Medium";
+  } else if (percentage >= 51 && percentage <= 90) {
+    return "High";
+  } else if (percentage >= 91 && percentage <= 100) {
+    return "Full";
+  } else {
+    return "Please provide a valid number of percentage. (e.g 0-100)";
+  }
+};
 
 // Problem 02
 
-// interface Booking {
-//     name: string,
-//     guests: number,
-//     time: string
-// }
+interface Booking {
+  name: string;
+  guests: number;
+  time: string;
+}
 
-// const formatBookingConfirmation = ({name,guests, time}: Booking): string => {
-//     // write your code here
-//     return `${name}'s table for ${guests} guests is confirmed at ${time}.`
-// };
-
+const formatBookingConfirmation = ({ name, guests, time }: Booking): string => {
+  // write your code here
+  return `${name}'s table for ${guests} guests is confirmed at ${time}.`;
+};
 
 // Problem 03
 
-// const calculateWeeklyTotal = (expenses: number[]): number => {
-//     // write your code here
-//     if(expenses.length === 0){
-//         return 0;
-//     }
-//     const totalNumber = expenses.reduce((acc, curr): number => acc + curr)
-//     return totalNumber
-// };
-
-
+const calculateWeeklyTotal = (expenses: number[]): number => {
+  return expenses.length
+    ? expenses.reduce((acc, curr): number => acc + curr)
+    : 0;
+};
 
 // Problem 04
 
+type Light = "red" | "yellow" | "green";
 
-// type Light = "red" | "yellow" | "green"
-
-// const getTrafficAction = (light: Light): string => {
-//     // write your code here
-//     if(light === "red"){
-//         return "Stop"
-//     }else if(light === "yellow"){
-//         return "Slow Down"
-//     }else{
-//         return "Go"
-//     }
-// }
-
+const getTrafficAction = (light: Light): string => {
+  // write your code here
+  if (light === "red") {
+    return "Stop";
+  } else if (light === "yellow") {
+    return "Slow Down";
+  } else {
+    return "Go";
+  }
+};
 
 // Problem 05
 
 interface Quizsummary {
-    total: number, 
-    average: number
+  total: number;
+  average: number;
 }
 
 const getQuizSummary = (scores: number[]): Quizsummary => {
-    // write your code here
-    const total = scores.length? scores.reduce((acc, curr): number => acc + curr) : 0;
-    const average = scores.length? total/scores.length : 0;
+  // write your code here
+  const total = scores.length
+    ? scores.reduce((acc, curr): number => acc + curr)
+    : 0;
+  const average = scores.length ? total / scores.length : 0;
 
-    return {
-        total,
-        average
-    }
+  return {
+    total,
+    average,
+  };
 };
-
